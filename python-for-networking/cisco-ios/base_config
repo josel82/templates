@@ -1,0 +1,148 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+CORE1
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+conf t
+host CORE1
+enable algorithm-type scrypt secret cisco
+username admin privilege 15 algorithm-type scrypt secret cisco
+ip domain-name lab.cisco.arpa
+no ip domain-lookup
+crypto key generate rsa modulus 2048
+ip ssh version 2
+ip ssh authentication-retries 3
+ip ssh time-out 120
+line vty 0 4
+ login local
+ transport input ssh
+line con 0
+logging synchronous
+vlan 99
+int vlan 99
+ ip add 10.1.99.10 255.255.255.0
+ no shut
+int g3/3 
+ switchport mode access
+ switchport access vlan 99
+ switchport nonegotiate
+ end
+wr
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+CORE2
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+conf t
+host CORE2
+enable algorithm-type scrypt secret cisco
+username admin privilege 15 algorithm-type scrypt secret cisco
+ip domain-name lab.cisco.arpa
+no ip domain-lookup
+crypto key generate rsa modulus 2048
+ip ssh version 2
+ip ssh authentication-retries 3
+ip ssh time-out 120
+line vty 0 4
+ login local
+ transport input ssh
+line con 0
+logging synchronous
+vlan 99
+int vlan 99
+ ip add 10.1.99.11 255.255.255.0
+ no shut
+int g3/3 
+ switchport mode access
+ switchport access vlan 99
+ switchport nonegotiate
+ end
+wr
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ACCESS1
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+conf t
+host ACCESS1
+enable algorithm-type scrypt secret cisco
+username admin privilege 15 algorithm-type scrypt secret cisco
+ip domain-name lab.cisco.arpa
+no ip domain-lookup
+crypto key generate rsa modulus 2048
+ip ssh version 2
+ip ssh authentication-retries 3
+ip ssh time-out 120
+line vty 0 4
+ login local
+ transport input ssh
+line con 0
+logging synchronous
+vlan 99
+int vlan 99
+ ip add 10.1.99.12 255.255.255.0
+ no shut
+int g3/3 
+ switchport mode access
+ switchport access vlan 99
+ switchport nonegotiate
+ end
+wr
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ACCESS2
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+conf t
+host ACCESS2
+enable algorithm-type scrypt secret cisco
+username admin privilege 15 algorithm-type scrypt secret cisco
+ip domain-name lab.cisco.arpa
+no ip domain-lookup
+crypto key generate rsa modulus 2048
+ip ssh version 2
+ip ssh authentication-retries 3
+ip ssh time-out 120
+line vty 0 4
+ login local
+ transport input ssh
+line con 0
+logging synchronous
+vlan 99
+int vlan 99
+ ip add 10.1.99.13 255.255.255.0
+ no shut
+int g3/3 
+ switchport mode access
+ switchport access vlan 99
+ switchport nonegotiate
+ end
+wr
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ACCESS3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+conf t
+host ACCESS3
+enable algorithm-type scrypt secret cisco
+username admin privilege 15 algorithm-type scrypt secret cisco
+ip domain-name lab.cisco.arpa
+no ip domain-lookup
+crypto key generate rsa modulus 2048
+ip ssh version 2
+ip ssh authentication-retries 3
+ip ssh time-out 120
+line vty 0 4
+ login local
+ transport input ssh
+line con 0
+logging synchronous
+vlan 99
+int vlan 99
+ ip add 10.1.99.14 255.255.255.0
+ no shut
+int g3/3 
+ switchport mode access
+ switchport access vlan 99
+ switchport nonegotiate
+ end
+wr
+
+
